@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Nasdaq from "./Nasdaq";
+import Facebook from "./Facebook";
 // import axios from 'axios'
 // import dotenv from "dotenv";
 // dotenv.config();
@@ -26,6 +27,7 @@ const Stocks = () => {
     <div>
       <div className="flex">
         <Nasdaq />
+        <Facebook />
       </div>
     </div>
   );

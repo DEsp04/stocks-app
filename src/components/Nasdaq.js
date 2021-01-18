@@ -19,17 +19,17 @@ const Nasdaq = () => {
 
 
 //NASDAQ(ndaq)
-useEffect(() => { 
-  const search = async () => { 
+  useEffect(() => {
+    const search = async () => {
 
-    const { data } = await axios.get(`${STOCK_URL}/stable/stock/ndaq/quote?token=${API_KEY}`);    
-    setNasdaqSymbol(data.symbol);
-    setNasdaqCompany(data.companyName);
-    setNasdaqPercent(data.changePercent * 100);
-    setNasdaqClose(data.close);
-  }
-  search()
-},[])
+      const { data } = await axios.get(`${STOCK_URL}/stable/stock/ndaq/quote?token=${API_KEY}`);
+      setNasdaqSymbol(data.symbol);
+      setNasdaqCompany(data.companyName);
+      setNasdaqPercent(data.changePercent * 100);
+      setNasdaqClose(data.close);
+    }
+    search()
+  }, []);
 
 
   const colorChange = nasdaqPercent < 0 ? "red" : "green";
