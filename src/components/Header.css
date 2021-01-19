@@ -14,3 +14,43 @@ h1 {
   margin: 0;
 }
 
+.stocks {
+  margin-top: 6%;
+}
+
+.stockCompany {
+  border: solid 2px #5b5b5b;
+  margin-top: 2%;
+  padding: 3% 2%;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex p {
+  margin: 0;
+}
+
+.bottom {
+  color: #5b5b5b;
+}
+
+h2 {
+  margin: 0;
+}
+
+.green{
+  background-color: #5ac339;
+  color: white;
+  padding: 1% 1%;
+  border-radius: 5px;
+}
+
+.red{
+  background-color: #a72b16;
+  color: white;
+  padding: 1% 1%;
+  border-radius: 5px;
+}

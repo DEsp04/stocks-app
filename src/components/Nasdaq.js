@@ -25,7 +25,7 @@ const Nasdaq = () => {
       const { data } = await axios.get(`${STOCK_URL}/stable/stock/ndaq/quote?token=${API_KEY}`);
       setNasdaqSymbol(data.symbol);
       setNasdaqCompany(data.companyName);
-      setNasdaqPercent(data.changePercent * 100);
+      setNasdaqPercent((data.changePercent * 100).toFixed(2));
       setNasdaqClose(data.close);
     }
     search()
@@ -37,10 +37,10 @@ const Nasdaq = () => {
   return (
     <div className="stockCompany">
      <div className="flex">
-      <p>{nasdaqSymbol}</p>
+      <h2>{nasdaqSymbol}</h2>
       <p>{nasdaqClose}</p>
     </div> 
-      <div className="flex">
+      <div className="flex bottom">
       <p>{nasdaqCompany}</p>
       <p className={`${colorChange}`}>{nasdaqPercent}%</p>
     </div>  

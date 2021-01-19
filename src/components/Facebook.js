@@ -24,7 +24,7 @@ useEffect(() => {
     const { data } = await axios.get(`${STOCK_URL}/stable/stock/fb/quote?token=${API_KEY}`);
     setFbSymbol(data.symbol);
     setFbCompany(data.companyName);
-    setFbPercent(data.changePercent * 100);
+    setFbPercent((data.changePercent * 100).toFixed(2));
     setFbClose(data.close);
   }
   search()
@@ -36,10 +36,10 @@ const colorChange = fbPercent < 0 ? "red" : "green";
 return (
   <div className="stockCompany">
     <div className="flex">
-      <p>{fbSymbol}</p>
+      <h2>{fbSymbol}</h2>
       <p>{fbClose}</p>
    </div> 
-    <div className="flex">
+    <div className="flex bottom">
       <p>{fbCompany}</p>
       <p className={`${colorChange}`}>{fbPercent}%</p>
    </div>  

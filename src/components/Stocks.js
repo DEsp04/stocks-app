@@ -48,14 +48,14 @@ const Stocks = () => {
     const colorChange = result.changePercent < 0 ? "red" : "green";
    if(result) {
       return (
-        <div>
+        <div className="stockCompany">
           <div className="flex">
-          <p>{result.symbol}</p>
+          <h2>{result.symbol}</h2>
           <p>{result.close}</p>
       </div> 
-      <div className="flex">
+      <div className="flex bottom">
           <p>{result.companyName}</p>
-          <p className={`${colorChange}`}>{result.changePercent * 100}%</p>
+          <p className={`${colorChange}`}>{(result.changePercent * 100).toFixed(2)}%</p>
         </div>  
         </div>
       );
@@ -64,8 +64,8 @@ const Stocks = () => {
 
 
   return (
-    <div>
-      <div className="flex">
+    <div className="stocks">
+      <div className="">
         <Nasdaq />
         <Spy />
         <Facebook />

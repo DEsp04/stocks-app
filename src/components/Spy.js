@@ -21,7 +21,7 @@ const Spy = () => {
       const { data } = await axios.get(`${STOCK_URL}/stable/stock/spy/quote?token=${API_KEY}`);
       setSpySymbol(data.symbol);
       setSpyCompany(data.companyName);
-      setSpyPercent(data.changePercent * 100);
+      setSpyPercent((data.changePercent * 100).toFixed(2));
       setSpyClose(data.close);
     }
     search()
@@ -34,10 +34,10 @@ const Spy = () => {
   return (
     <div className="stockCompany">
      <div className="flex">
-        <p>{spySymbol}</p>
+        <h2>{spySymbol}</h2>
         <p>{spyClose}</p>
      </div> 
-     <div className="flex">
+     <div className="flex bottom">
         <p>{spyCompany}</p>
         <p className={`${colorChange}`}>{spyPercent}%</p>
       </div>  

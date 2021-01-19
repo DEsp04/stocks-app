@@ -22,7 +22,7 @@ const Snap = () => {
       const { data } = await axios.get(`${STOCK_URL}/stable/stock/snap/quote?token=${API_KEY}`);
       setSnapSymbol(data.symbol);
       setSnapCompany(data.companyName);
-      setSnapPercent(data.changePercent * 100);
+      setSnapPercent((data.changePercent * 100).toFixed(2));
       setSnapClose(data.close);
     }
     search()
@@ -35,10 +35,10 @@ const Snap = () => {
   return (
     <div className="stockCompany">
       <div className="flex">
-        <p>{snapSymbol}</p>
+        <h2>{snapSymbol}</h2>
         <p>{snapClose}</p>
      </div> 
-      <div className="flex">
+      <div className="flex bottom">
         <p>{snapCompany}</p>
         <p className={`${colorChange}`}>{snapPercent}%</p>
      </div>  
