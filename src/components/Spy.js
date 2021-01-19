@@ -32,7 +32,7 @@ const Spy = () => {
   const colorChange = spyPercent < 0 ? "red" : "green";
   
   return (
-    <div>
+    <div className="stockCompany">
      <div className="flex">
         <p>{spySymbol}</p>
         <p>{spyClose}</p>

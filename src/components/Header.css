@@ -1,3 +1,16 @@
-div {
-  background-color: aqua;
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
 }
+
+.header {
+  background-color: #29272a;
+  color: white;
+  padding: 1% 2%;
+}
+
+h1 {
+  margin: 0;
+}
+

@@ -34,7 +34,7 @@ useEffect(() => {
 const colorChange = fbPercent < 0 ? "red" : "green";
 
 return (
-  <div>
+  <div className="stockCompany">
     <div className="flex">
       <p>{fbSymbol}</p>
       <p>{fbClose}</p>

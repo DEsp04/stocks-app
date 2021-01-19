@@ -33,7 +33,7 @@ const Snap = () => {
   const colorChange = snapPercent < 0 ? "red" : "green";
 
   return (
-    <div>
+    <div className="stockCompany">
       <div className="flex">
         <p>{snapSymbol}</p>
         <p>{snapClose}</p>

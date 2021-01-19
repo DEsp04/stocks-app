@@ -35,7 +35,7 @@ const Nasdaq = () => {
   const colorChange = nasdaqPercent < 0 ? "red" : "green";
   
   return (
-    <div>
+    <div className="stockCompany">
      <div className="flex">
       <p>{nasdaqSymbol}</p>
       <p>{nasdaqClose}</p>
