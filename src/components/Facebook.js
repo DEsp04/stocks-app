@@ -36,12 +36,12 @@ const colorChange = fbPercent < 0 ? "red" : "green";
 return (
   <div>
     <div className="flex">
-     <p>{fbSymbol}</p>
-     <p>{fbCompany}</p>
+      <p>{fbSymbol}</p>
+      <p>{fbClose}</p>
    </div> 
-   <div className="flex">
-     <p className={`${colorChange}`}>{fbPercent}%</p>
-     <p>{fbClose}</p>
+    <div className="flex">
+      <p>{fbCompany}</p>
+      <p className={`${colorChange}`}>{fbPercent}%</p>
    </div>  
   </div>
   );

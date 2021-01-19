@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Nasdaq from "./Nasdaq";
+import Spy from "./Spy";
 import Facebook from "./Facebook";
-// import axios from 'axios'
-// import dotenv from "dotenv";
-// dotenv.config();
+import Snap from "./Snap";
+import axios from 'axios'
 
 
-// const SEARCH_ADVICE_URL = process.env.SEARCH_ADVICE_URL;
-// const API_KEY = process.env.API_KEY;
 
-// const response = `${SEARCH_ADVICE_URL}/stable/stock/${value}/quote?token=${API_KEY}`;
-
+const STOCK_URL = `${process.env.REACT_APP_STOCK_URL}`;
+const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 
 
 
@@ -18,7 +16,7 @@ import Facebook from "./Facebook";
 const Stocks = () => { 
 
 
-
+  const [stockName, setStockName] = useState('');
 
 
 
@@ -27,7 +25,15 @@ const Stocks = () => {
     <div>
       <div className="flex">
         <Nasdaq />
+        <Spy />
         <Facebook />
+        <Snap />
+        <input
+          value={stockName}
+          onChange={e => setStockName(e.target.value)}
+          type="Search"
+          placeholder="Search"
+        />
       </div>
     </div>
   );

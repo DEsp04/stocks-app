@@ -38,11 +38,11 @@ const Nasdaq = () => {
     <div>
      <div className="flex">
       <p>{nasdaqSymbol}</p>
-      <p>{nasdaqCompany}</p>
-    </div> 
-    <div className="flex">
-      <p className={`${colorChange}`}>{nasdaqPercent}%</p>
       <p>{nasdaqClose}</p>
+    </div> 
+      <div className="flex">
+      <p>{nasdaqCompany}</p>
+      <p className={`${colorChange}`}>{nasdaqPercent}%</p>
     </div>  
     </div>
   );
