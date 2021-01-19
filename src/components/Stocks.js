@@ -20,6 +20,18 @@ const Stocks = () => {
 
 
 
+  useEffect(() => {
+    const search = async () => {
+  
+      const { data } = await axios.get(`${STOCK_URL}/stable/stock/${stockName}/quote?token=${API_KEY}`);
+
+    }
+    search()
+  }, []);
+
+
+
+
 
   return (
     <div>
