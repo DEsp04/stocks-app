@@ -17,6 +17,7 @@ const Stocks = () => {
 
 
   const [stockName, setStockName] = useState('');
+  const [result, setResult] = useState('');
 
 
 
@@ -25,12 +26,41 @@ const Stocks = () => {
   
       const { data } = await axios.get(`${STOCK_URL}/stable/stock/${stockName}/quote?token=${API_KEY}`);
 
+      setResult(data)
+      console.log(data)
     }
-    search()
-  }, []);
 
 
+    const timeoutId = setTimeout(() => {
+      search();
+    }, 500);
 
+    // console.log(timeoutId);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+    
+  }, [stockName]);
+
+
+  const displayResult = () => { 
+    const colorChange = result.changePercent < 0 ? "red" : "green";
+   if(result) {
+      return (
+        <div>
+          <div className="flex">
+          <p>{result.symbol}</p>
+          <p>{result.close}</p>
+      </div> 
+      <div className="flex">
+          <p>{result.companyName}</p>
+          <p className={`${colorChange}`}>{result.changePercent * 100}%</p>
+        </div>  
+        </div>
+      );
+   }
+  }
 
 
   return (
@@ -46,6 +76,9 @@ const Stocks = () => {
           type="Search"
           placeholder="Search"
         />
+      </div>
+      <div>
+        {displayResult()}
       </div>
     </div>
   );
