@@ -70,12 +70,14 @@ const Stocks = () => {
         <Spy />
         <Facebook />
         <Snap />
-        <input
-          value={stockName}
-          onChange={e => setStockName(e.target.value)}
-          type="Search"
-          placeholder="Search"
-        />
+        <div className="flex-two">
+          <input
+            value={stockName}
+            onChange={e => setStockName(e.target.value)}
+            type="Search"
+            placeholder="Search"
+            />
+        </div>
       </div>
       <div>
         {displayResult()}
