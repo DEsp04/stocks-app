@@ -6,7 +6,7 @@ import axios from 'axios';
 const STOCK_URL = `${process.env.REACT_APP_STOCK_URL}`;
 const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 
-console.log(STOCK_URL);
+
 
 
 const Nasdaq = () => { 
